@@ -1,7 +1,7 @@
 # Udagram Image Filtering Microservice Project Submission
 ![eb-deployed](./deployment_screenshot/eb-deployed.jpg)
 This is a submission of my project: Udagram (My own Instgram on AWS). 
-I encountered limitations with the provided account on AWS in regards to creating IAM user and IAM policy groups. So i decided us my own personal account.
+I encountered limitations with the provided account on AWS in regards to creating IAM user and IAM policy groups. So I decided us my own personal account.
 
 The project is runing at:
 1. [AWS link](http://daniel-johnson.us-east-1.elasticbeanstalk.com/) this is the link provided by the EB deployment
