@@ -19,7 +19,8 @@ You'll need to create a new node server. Open a new terminal within the project 
 
 ### Testing the server
 
-1. Import the `daniel-johnson.postman_collection.json` to postman. The endpoint `/filtered image` is secured, which means you net a token to access the endpoint.
+1. Import the `daniel-johnson.postman_collection.json` to postman. 
+> !!NOTE The endpoint `/filtered image` is secured, which means you net a token to access the endpoint.
 
 2. To generate a token, simply send a request to the endpoint Generate Token `/genToken?name={{Desired-Name}}` passing your desired name.
 
