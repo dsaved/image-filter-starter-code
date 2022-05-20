@@ -8,6 +8,35 @@
 	"item": [
 		{
 			"name": "Generate Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has Created\", function () {\r",
+							"    pm.response.to.have.status(\"Created\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body to include token\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"token\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -33,6 +62,23 @@
 		},
 		{
 			"name": "filtered image",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -47,7 +93,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{HOST}}/filteredimage?image_url=https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?crop=entropy%26cs=tinysrgb%26fm=jpg%26ixlib=rb-1.2.1%26q=80%26raw_url=true%26ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto=format%26fit=crop%26w=500",
+					"raw": "http://{{HOST}}/filteredimage?image_url=https://images.unsplash.com/photo-1615485925600-97237c4fc1ec?ixlib=rb-1.2.1%26raw_url=true%26q=60%26fm=jpg%26crop=entropy%26cs=tinysrgb%26ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D%26auto=format%26fit=crop%26w=500",
 					"protocol": "http",
 					"host": [
 						"{{HOST}}"
@@ -58,12 +104,12 @@
 					"query": [
 						{
 							"key": "image_url",
-							"value": "https://images.unsplash.com/photo-1615485925600-97237c4fc1ec?ixlib=rb-1.2.1&raw_url=true&q=60&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500",
+							"value": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?crop=entropy%26cs=tinysrgb%26fm=jpg%26ixlib=rb-1.2.1%26q=80%26raw_url=true%26ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto=format%26fit=crop%26w=500",
 							"disabled": true
 						},
 						{
 							"key": "image_url",
-							"value": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?crop=entropy%26cs=tinysrgb%26fm=jpg%26ixlib=rb-1.2.1%26q=80%26raw_url=true%26ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto=format%26fit=crop%26w=500"
+							"value": "https://images.unsplash.com/photo-1615485925600-97237c4fc1ec?ixlib=rb-1.2.1%26raw_url=true%26q=60%26fm=jpg%26crop=entropy%26cs=tinysrgb%26ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D%26auto=format%26fit=crop%26w=500"
 						}
 					]
 				}
@@ -101,6 +147,12 @@
 		{
 			"key": "HOST",
 			"value": "daniel-johnson.us-east-1.elasticbeanstalk.com",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "HOST",
+			"value": "aws-eb.divat.store",
 			"type": "string"
 		}
 	]
