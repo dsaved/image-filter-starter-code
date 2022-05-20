@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "26149765-a11e-4605-914f-7aa7f6560aae",
+		"name": "cloud-cdnd-c2-final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11885478"
+	},
+	"item": [
+		{
+			"name": "Generate Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}/genToken?name=Helen",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"genToken"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Helen"
+						}
+					]
+				},
+				"description": "Call this endpoint to generate a token.\nThis token will be used to make a request to the filteredimage endpoint.\n\nRemember to pass a name as a parameter,: this will be used to generate the token"
+			},
+			"response": []
+		},
+		{
+			"name": "filtered image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.SGVsZW4.jI3ozyo0qDkE5jHd_fdfdjFo9qda_IqjGsVHpLJdYbM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}/filteredimage?image_url=https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?crop=entropy%26cs=tinysrgb%26fm=jpg%26ixlib=rb-1.2.1%26q=80%26raw_url=true%26ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto=format%26fit=crop%26w=500",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://images.unsplash.com/photo-1615485925600-97237c4fc1ec?ixlib=rb-1.2.1&raw_url=true&q=60&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500",
+							"disabled": true
+						},
+						{
+							"key": "image_url",
+							"value": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?crop=entropy%26cs=tinysrgb%26fm=jpg%26ixlib=rb-1.2.1%26q=80%26raw_url=true%26ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto=format%26fit=crop%26w=500"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "localhost:8082",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "HOST",
+			"value": "daniel-johnson.us-east-1.elasticbeanstalk.com",
+			"type": "string"
+		}
+	]
+}
