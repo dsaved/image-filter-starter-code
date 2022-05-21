@@ -3,10 +3,10 @@
 This is a submission of my project: Udagram (My own Instgram on AWS). 
 I encountered limitations with the provided account on AWS in regards to creating IAM user and IAM policy groups. So I decided to use my own personal account.
 
-The project is runing at:
+<!-- The project is runing at:
 1. [AWS link](http://daniel-johnson.us-east-1.elasticbeanstalk.com/) this is the link provided by the EB deployment
 2. [Custorm link](http://divat.store/), ``divat.store`` personal provission
-3. [Custorm subdomain link](http://aws-eb.divat.store/), ``aws-eb.divat.store`` personal provission
+3. [Custorm subdomain link](http://aws-eb.divat.store/), ``aws-eb.divat.store`` personal provission -->
 
 ### Setup Node Environment
 
